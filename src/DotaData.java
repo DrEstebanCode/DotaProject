@@ -13,6 +13,7 @@ public class DotaData{
 
 
     //  main function that tests getting match details
+    /*
     public static void main(String [] args){
         DotaData myDota = new DotaData();
         String apiKey;
@@ -20,6 +21,7 @@ public class DotaData{
         System.out.println(apiKey);
         myDota.getEndGameStats(975378350);
     }
+    */
 
     // Function that reads in an api key stored within a text file within the src file
     // apikey.txt should never be pushed to and should be included in the .gitignore file
@@ -74,9 +76,7 @@ public class DotaData{
             JSONObject data = new JSONObject(response.toString());
             System.out.println(data.toString());
             JSONObject resultData = data.getJSONObject("result");
-            System.out.println(resultData.toString());
             JSONArray playerData = resultData.getJSONArray("players");
-            System.out.println(playerData.toString());
             for (int i = 0; i < playerData.length(); i++){
                 JSONObject playerInfo = playerData.getJSONObject(i);
                 int playerId = playerInfo.getInt("account_id");
