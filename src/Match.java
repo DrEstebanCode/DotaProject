@@ -121,7 +121,7 @@ public class Match {
     {
         for (Player player : players)
         {
-            if (player.playerId == Id)
+            if (player.getPlayerId() == Id)
                 return player;
         }
 
