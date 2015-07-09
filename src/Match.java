@@ -146,6 +146,11 @@ public class Match {
             level = playerInfo.getInt("level");
         }
 
+        public boolean positiveGame()
+        {
+            return (positiveVotes >= negativeVotes);
+        }
+
         // All the get functions!!!
 
         public int getPlayerId(){
