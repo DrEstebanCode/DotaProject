@@ -107,9 +107,26 @@ public class Match {
         return thePlayers;
     }
 
+    public boolean positiveGame()
+    {
+        return (positiveVotes >= negativeVotes);
+    }
+
     // Gets gets gets
     public Player[] getPlayers(){
         return players;
+    }
+
+    public Player findPlayer(int Id)
+    {
+        for (Player player : players)
+        {
+            if (player.getPlayerId == Id)
+                return player;
+        }
+
+        // did not find the player with that ID
+        return null;
     }
 
     //Player class!!! :) :D
@@ -146,10 +163,6 @@ public class Match {
             level = playerInfo.getInt("level");
         }
 
-        public boolean positiveGame()
-        {
-            return (positiveVotes >= negativeVotes);
-        }
 
         // All the get functions!!!
 
